@@ -106,7 +106,7 @@ class Button{
 
 
 void setup() {
-  size(300, 500);
+  size(300, 480);
   background(#82756f);
   
   // test = myLat;
@@ -119,12 +119,12 @@ void setup() {
   color p = color(#ee7302);
   // int x = 25; 
   // int y = 25;
-  button[0] = new Button(0, 450, 50, b,p);
-  button[1] = new Button(50,450,50,#b13c11, #b16411);
-  button[2] = new Button(100,450,50,#7a2949, #541c32);
-  button[3] = new Button(150,450,50,#335d69, #26464f);
-  button[4] = new Button(200, 450, 50,#67a193,#3f675d);
-  button[5] = new Button(250,450,50,#0551d0,170);
+  button[0] = new Button(0, 430, 50, b,p);
+  button[1] = new Button(50,430,50,#b13c11, #b16411);
+  button[2] = new Button(100,430,50,#7a2949, #541c32);
+  button[3] = new Button(150,430,50,#335d69, #26464f);
+  button[4] = new Button(200, 430, 50,#67a193,#3f675d);
+  button[5] = new Button(250,430,50,#0551d0,170);
 
   smooth();
 

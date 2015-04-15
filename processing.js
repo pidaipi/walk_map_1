@@ -1347,7 +1347,7 @@
     p.pmouseY = 0;
     p.mouseX = 0;
     p.mouseY = 0;
-    p.mouseButton = 0;
+    p.mouseball0 = 0;
     p.mouseScroll = 0;
     p.mouseClicked = undef;
     p.mouseDragged = undef;
@@ -8289,7 +8289,7 @@
           updateMousePosition(curElement, e.touches[0]);
           p.__mousePressed = true;
           p.mouseDragging = false;
-          p.mouseButton = 37;
+          p.mouseball0 = 37;
           if (typeof p.mousePressed === "function") p.mousePressed()
         });
         attachEventHandler(curElement, "touchmove", function(e) {
@@ -8354,13 +8354,13 @@
       p.mouseDragging = false;
       switch (e.which) {
       case 1:
-        p.mouseButton = 37;
+        p.mouseball0 = 37;
         break;
       case 2:
-        p.mouseButton = 3;
+        p.mouseball0 = 3;
         break;
       case 3:
-        p.mouseButton = 39;
+        p.mouseball0 = 39;
         break
       }
       if (typeof p.mousePressed === "function") p.mousePressed()
@@ -8555,7 +8555,7 @@
     var names = ["abs", "acos", "alpha", "ambient", "ambientLight", "append",
       "applyMatrix", "arc", "arrayCopy", "asin", "atan", "atan2", "background", "beginCamera", "beginDraw", "beginShape", "bezier", "bezierDetail", "bezierPoint", "bezierTangent", "bezierVertex", "binary", "blend", "blendColor", "blit_resize", "blue", "box", "breakShape", "brightness", "camera", "ceil", "Character", "color", "colorMode", "concat", "constrain", "copy", "cos", "createFont", "createGraphics", "createImage", "cursor", "curve", "curveDetail", "curvePoint", "curveTangent", "curveTightness", "curveVertex", "day", "degrees", "directionalLight",
       "disableContextMenu", "dist", "draw", "ellipse", "ellipseMode", "emissive", "enableContextMenu", "endCamera", "endDraw", "endShape", "exit", "exp", "expand", "externals", "fill", "filter", "floor", "focused", "frameCount", "frameRate", "frustum", "get", "glyphLook", "glyphTable", "green", "height", "hex", "hint", "hour", "hue", "image", "imageMode", "intersect", "join", "key", "keyCode", "keyPressed", "keyReleased", "keyTyped", "lerp", "lerpColor", "lightFalloff", "lights", "lightSpecular", "line", "link", "loadBytes", "loadFont", "loadGlyphs",
-      "loadImage", "loadPixels", "loadShape", "loadXML", "loadStrings", "log", "loop", "mag", "map", "match", "matchAll", "max", "millis", "min", "minute", "mix", "modelX", "modelY", "modelZ", "modes", "month", "mouseButton", "mouseClicked", "mouseDragged", "mouseMoved", "mouseOut", "mouseOver", "mousePressed", "mouseReleased", "mouseScroll", "mouseScrolled", "mouseX", "mouseY", "name", "nf", "nfc", "nfp", "nfs", "noCursor", "noFill", "noise", "noiseDetail", "noiseSeed", "noLights", "noLoop", "norm", "normal", "noSmooth", "noStroke", "noTint", "ortho",
+      "loadImage", "loadPixels", "loadShape", "loadXML", "loadStrings", "log", "loop", "mag", "map", "match", "matchAll", "max", "millis", "min", "minute", "mix", "modelX", "modelY", "modelZ", "modes", "month", "mouseball0", "mouseClicked", "mouseDragged", "mouseMoved", "mouseOut", "mouseOver", "mousePressed", "mouseReleased", "mouseScroll", "mouseScrolled", "mouseX", "mouseY", "name", "nf", "nfc", "nfp", "nfs", "noCursor", "noFill", "noise", "noiseDetail", "noiseSeed", "noLights", "noLoop", "norm", "normal", "noSmooth", "noStroke", "noTint", "ortho",
       "param", "parseBoolean", "parseByte", "parseChar", "parseFloat", "parseInt", "peg", "perspective", "PImage", "pixels", "PMatrix2D", "PMatrix3D", "PMatrixStack", "pmouseX", "pmouseY", "point", "pointLight", "popMatrix", "popStyle", "pow", "print", "printCamera", "println", "printMatrix", "printProjection", "PShape", "PShapeSVG", "pushMatrix", "pushStyle", "quad", "radians", "random", "Random", "randomSeed", "rect", "rectMode", "red", "redraw", "requestImage", "resetMatrix", "reverse", "rotate", "rotateX", "rotateY", "rotateZ", "round", "saturation",
       "save", "saveFrame", "saveStrings", "scale", "screenX", "screenY", "screenZ", "second", "set", "setup", "shape", "shapeMode", "shared", "shearX", "shearY", "shininess", "shorten", "sin", "size", "smooth", "sort", "specular", "sphere", "sphereDetail", "splice", "split", "splitTokens", "spotLight", "sq", "sqrt", "status", "str", "stroke", "strokeCap", "strokeJoin", "strokeWeight", "subset", "tan", "text", "textAlign", "textAscent", "textDescent", "textFont", "textLeading", "textMode", "textSize", "texture", "textureMode", "textWidth", "tint", "toImageData",
       "touchCancel", "touchEnd", "touchMove", "touchStart", "translate", "transform", "triangle", "trim", "unbinary", "unhex", "updatePixels", "use3DContext", "vertex", "width", "XMLElement", "XML", "year", "__contains", "__equals", "__equalsIgnoreCase", "__frameRate", "__hashCode", "__int_cast", "__instanceof", "__keyPressed", "__mousePressed", "__printStackTrace", "__replace", "__replaceAll", "__replaceFirst", "__toCharArray", "__split", "__codePointAt", "__startsWith", "__endsWith", "__matches"];
@@ -9881,7 +9881,7 @@
         cursor: "n-resize",
         backgroundColor: "darkgrey"
       },
-        closeButtonStyles = {
+        closeball0Styles = {
         position: "absolute",
         top: "5px",
         right: "20px",
@@ -9947,7 +9947,7 @@
           containerStyle = container[$style],
           resizer = append(container, createElement($div)),
           output = append(container, createElement($div)),
-          closeButton = append(container, createElement($div)),
+          closeball0 = append(container, createElement($div)),
           resizingLog = False,
           previousHeight = False,
           previousScrollTop = False,
@@ -9985,7 +9985,7 @@
           previousScrollTop = output.scrollTop
         }), observer(resizer, "contextmenu", function() {
           resizingLog = False
-        }), observer(closeButton, "click", function() {
+        }), observer(closeball0, "click", function() {
           uninit()
         })];
         uninit = function() {
@@ -9997,9 +9997,9 @@
           clearChildren(container);
           tinylogLite[log] = createLog
         };
-        setStyles(container, containerStyles, output, outputStyles, resizer, resizerStyles, closeButton, closeButtonStyles);
-        closeButton[$title] = "Close Log";
-        append(closeButton, createTextNode("\u2716"));
+        setStyles(container, containerStyles, output, outputStyles, resizer, resizerStyles, closeball0, closeball0Styles);
+        closeball0[$title] = "Close Log";
+        append(closeball0, createTextNode("\u2716"));
         resizer[$title] = "Double-click to toggle log minimization";
         docElem.insertBefore(container, docElem.firstChild);
         tinylogLite[log] = function(message) {
