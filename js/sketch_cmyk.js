@@ -115,7 +115,7 @@ void setup() {
   newLat = map(myLat, 41.84, 41.94, 0, 350);
   newLon= map(myLon, -87.56, -87.7, 0, 300);
 
-  color b = color(#ff0080);
+  color b = color(#ff00ff);
   color p = color(#ff0000);
   // int x = 25; 
   // int y = 25;
@@ -161,8 +161,8 @@ void dot(){
   // console.log(newLat);
   // console.log(newLon);
   int sc = 20;
-  float trX = 137;
-  float trY = 141;
+  float trX = newLon;
+  float trY = newLat;
   smooth();
   noStroke();
   fill (w);

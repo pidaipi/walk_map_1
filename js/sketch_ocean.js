@@ -107,7 +107,7 @@ class Button{
 
 void setup() {
   size(300, 480);
-  background(#82756f);
+  background(#d2cfd8);
   
   // test = myLat;
   // console.log(test);
@@ -115,15 +115,15 @@ void setup() {
   newLat = map(myLat, 41.84, 41.94, 0, 350);
   newLon= map(myLon, -87.56, -87.7, 0, 300);
 
-  color b = color(#feba7b);
-  color p = color(#ee7302);
+  color b = color(#0c0e22);
+  color p = color(#3f4ab3);
   // int x = 25; 
   // int y = 25;
   button[0] = new Button(0, 430, 50, b,p);
-  button[1] = new Button(50,430,50,#b13c11, #b16411);
-  button[2] = new Button(100,430,50,#7a2949, #541c32);
-  button[3] = new Button(150,430,50,#335d69, #26464f);
-  button[4] = new Button(200, 430, 50,#67a193,#3f675d);
+  button[1] = new Button(50, 430, 50, #1c2c4e,#1c204e);
+  button[2] = new Button(100,430,50,#244f6d, #243d6d);
+  button[3] = new Button(150,430,50,#668aa8, #46637b);
+  button[4] = new Button(200,430,50,#ccd9e3, #9bb4c8);
   button[5] = new Button(250,430,50,#0551d0,170);
 
   smooth();
@@ -135,21 +135,21 @@ void setup() {
 
 
 
-int w = #feba7b;
+int w = #1c2c4e;
 
 void colorPalette(){
   if(mode==1){
-    w=#feba7b;
+    w=#0c0e22;
   }else if (mode==2){
-    w=#b13c11;
+    w=#1c2c4e;
   }else if (mode == 3){
-    w=#7a2949;
+    w=#244f6d;
   }else if (mode == 4){
-    w= #335d69;
+    w= #668aa8;
   }else if (mode == 5){
-    w= #67a193;
+    w= #ccd9e3;
   }else if (mode == 6){
-    w= #82756f;
+    w= #d2cfd8;
   }
 }
 void dot(){
