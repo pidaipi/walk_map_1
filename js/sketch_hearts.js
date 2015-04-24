@@ -112,7 +112,7 @@ static final float round10(float f, float c) {
 
 void setup() {
   size(300, 480);
-  background(#82756f);
+  background(#979797);
   
   // test = myLat;
   // console.log(test);
@@ -120,15 +120,15 @@ void setup() {
   newLat = map(myLat, 41.84, 41.94, 0, 350);
   newLon= map(myLon, -87.56, -87.7, 0, 300);
 
-  color b = color(#feba7b);
-  color p = color(#ee7302);
+  color b = color(#e0e1e1);
+  color p = color(#b9bbbb);
   // int x = 25; 
   // int y = 25;
   button[0] = new Button(0, 430, 50, b,p);
-  button[1] = new Button(50,430,50,#b13c11, #b16411);
-  button[2] = new Button(100,430,50,#7a2949, #541c32);
-  button[3] = new Button(150,430,50,#335d69, #26464f);
-  button[4] = new Button(200, 430, 50,#67a193,#3f675d);
+  button[1] = new Button(50, 430, 50, #d6eeef,#9fd7da);
+  button[2] = new Button(100,430,50,#88c2c0, #56a8a5);
+  button[3] = new Button(150,430,50,#ed80b3, #e43d8b);
+  button[4] = new Button(200,430,50,#fbea1a, #c5b603);
   button[5] = new Button(250,430,50,#0551d0,170);
 
   smooth();
@@ -140,28 +140,28 @@ void setup() {
 
 
 
-int w = #feba7b;
+int w = #d6eeef;
 
 void colorPalette(){
   if(mode==1){
-    w=#feba7b;
+    w=#e0e1e1;
   }else if (mode==2){
-    w=#b13c11;
+    w=#d6eeef;
   }else if (mode == 3){
-    w=#7a2949;
+    w=#88c2c0;
   }else if (mode == 4){
-    w= #335d69;
+    w= #ed80b3;
   }else if (mode == 5){
-    w= #67a193;
+    w= #fbea1a;
   }else if (mode == 6){
-    w= #82756f;
+    w= #979797;
   }
 }
 void dot(){
   getLocation();
   newLat = map(myLat, 41.84, 41.94, 0, 350);
   newLon= map(myLon, -87.56, -87.7, 0, 300);
-  // document.getElementById("coords").innerHTML = "Mapped Latitude: " + newLat + "Mapped Longitude: " + newLon + "POSITION:" + round10(newLon,OFFSET)+","+round10(newLat,OFFSET);
+  // document.getElementById("coords").innerHTML = "Mapped Latitude: " + newLat + "Mapped Longitude: " + newLon;
 
   // console.log(newLat);
   // console.log(newLon);

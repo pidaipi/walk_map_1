@@ -104,6 +104,11 @@ class Button{
   }
 }
 
+static final float OFFSET = 1e-3;
+ 
+static final float round10(float f, float c) {
+  return round(f/10.0 - c) * 10.0;
+}
 
 void setup() {
   size(300, 480);
@@ -152,27 +157,29 @@ void colorPalette(){
     w= 170;
   }
 }
+
 void dot(){
   getLocation();
   newLat = map(myLat, 41.84, 41.94, 0, 350);
   newLon= map(myLon, -87.56, -87.7, 0, 300);
-  // document.getElementById("coords").innerHTML = "Mapped Latitude: " + newLat + "Mapped Longitude: " + newLon;
+  // document.getElementById("coords").innerHTML = "Mapped Latitude: " + newLat + "Mapped Longitude: " + newLon + "POSITION:" + round10(newLon,OFFSET)+","+round10(newLat,OFFSET);
 
   // console.log(newLat);
   // console.log(newLon);
   int sc = 20;
-  float trX = newLon;
-  float trY = newLat;
+
+  float trX = round10(newLon, OFFSET);
+  float trY = round10(newLat, OFFSET);
+
   smooth();
   noStroke();
   fill (w);
+  
+  
   translate(-trX*sc+trX, -trY*sc+trY);
-  scale(sc);
+  scale(sc);  
+  ellipse(newLon, newLat,15/sc,15/sc);
 
-  ellipse(newLon, newLat,10/sc,10/sc);
-
-
-  loop();
 }
 
 // int m = #ff00ff;

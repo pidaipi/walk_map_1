@@ -104,6 +104,11 @@ class Button{
   }
 }
 
+static final float OFFSET = 1e-3;
+ 
+static final float round10(float f, float c) {
+  return round(f/10.0 - c) * 10.0;
+}
 
 void setup() {
   size(300, 480);
@@ -161,15 +166,15 @@ void dot(){
   // console.log(newLat);
   // console.log(newLon);
   int sc = 20;
-  float trX = newLon;
-  float trY = newLat;
+  float trX = round10(newLon, OFFSET);
+  float trY = round10(newLat, OFFSET);
   smooth();
   noStroke();
   fill (w);
   translate(-trX*sc+trX, -trY*sc+trY);
   scale(sc);
 
-  ellipse(newLon, newLat,10/sc,10/sc);
+  ellipse(newLon, newLat,15/sc,15/sc);
 
 
   loop();
